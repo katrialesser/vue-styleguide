@@ -22,6 +22,6 @@ describe("Color.vue", () => {
   })
 
   it("should create multiple color groups", () => {
-    expect(vm.$el.querySelector(".color_group_2")).toBeDefined()
+    expect(vm.$el.querySelector(".ima")).toBeDefined()
   })
 })

@@ -5,10 +5,13 @@
       :key="index"
       class="color"
       :class="prop.category"
-      v-if="prop.type === 'color'">
+      v-if="prop.type === 'color' && prop.category !== 'extra'">
+
         <div class="swatch" :style="{ backgroundColor: prop.value }" />
-        <h3>{{prop.name.replace(/_/g, " ").replace(/color/g, "")}}</h3>
+        <h3>{{prop.label}}</h3>
+        <span>HEX: {{prop.originalValue}}</span>
         <span>RGB: {{prop.value}}</span>
+        <span>Product/Category: {{prop.category.replace(/\d-/g, "")}}</span>
         <span>SCSS: ${{prop.name.replace(/_/g, "-")}}</span>
     </div>
   </div>
@@ -25,6 +28,7 @@ import orderBy from "lodash/orderBy"
  * like destructive actions and error messages. To edit the colors, see
  * [/src/tokens/color.yml](https://github.com/viljamis/vue-design-system/blob/master/src/tokens/color.yml).
  */
+ /* the name below is the page title - cant change without breaking */
 export default {
   name: "Color",
   methods: {
@@ -32,7 +36,14 @@ export default {
       // let byValue = orderBy(data, "value", "asc")
       let byName = orderBy(data, "name", "asc")
       let byCategoryAndName = orderBy(byName, "category")
-      return byCategoryAndName
+
+      let byCategory = orderBy(data, "category", "asc")
+      let byCategoryAndHex = orderBy(byCategory, "originalValue")
+
+      let byHex = orderBy(data, "originalValue", "asc")
+      let byHexAndCategory = orderBy(byHex, "category")
+
+      return byHexAndCategory
     },
   },
   data() {
@@ -97,7 +108,7 @@ h3 {
   box-shadow: 0 0 0 1px rgba(63, 63, 68, 0.05), 0 1px 3px 0 rgba(63, 63, 68, 0.15);
   font-size: $font-size-small;
   font-family: $font-family-text;
-  color: $color-rich-black;
+  color: $ilws-gray-dark;
   border-radius: $border-radius-default;
   overflow: hidden;
   text-align: left;
@@ -108,13 +119,13 @@ h3 {
   }
   &:hover {
     span {
-      color: shade($color-silver, 40%);
+      color: shade($ilws-gray-medium, 40%);
     }
   }
   span {
     margin-bottom: $space-x-small;
     line-height: 1.3;
-    color: $color-silver;
+    color: $ilws-gray-medium;
     font-size: $font-size-small;
     width: 100%;
     float: left;

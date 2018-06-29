@@ -6,84 +6,161 @@
 # To make things a little simpler for your team,
 # utilize both global & local tokens for colors.
 #
-
 aliases:
-  vermilion:
-    value: "7, 83%"
-  ucla_gold:
-    value: "43, 100%"
-  bleu_de_france:
-    value: "210, 86%"
-  oxford_blue:
-    value: "210, 100%"
-  rich_black:
-    value: "#001123"
+#  ilws-illDark:
+#    value: "#0076ab"
+#  ilws-illMain:
+#    value: "#0094d6"
+#  ilws-illMedium:
+#    value: "#5cbae5"
+#  ilws-illLight:
+#    value: "#cceaf7"
+
+#  ilws_iesDark:
+#    value: "#878e19"
+#  ilws_iesMain:
+#    value: "#a9b21f"
+#  ilws_iesMedium:
+#    value: "#c4ca5b"
+#  ilws_iesLight:
+#    value: "#e7efc1"
+
+#  ilws_imaDark:
+#    value: "#c77e25"
+#  ilws_imaMain:
+#    value: "#f99e2e"
+#  ilws_imaMedium:
+#    value: "#feb862"
+#  ilws_imaLight:
+#    value: "#ffe8ba"
+
+  ilws_imfDark:
+    value: "#b5151c"
+  ilws_imfMain:
+    value: "#e21a23"
+  ilws_imfMedium:
+    value: "#fa535a"
+  ilws_imfLight:
+    value: "#fdddce"
+
+  ilws_grayDark:
+    value: "#333333"
+  ilws_grayMain:
+    value: "#666666"
+  ilws_grayMedium:
+    value: "#999999"
+  ilws_grayLight:
+    value: "#f2f2f2"
+
+  ilws_brightGreen:
+    value: "#8DDC2F"
+
   white:
     value: "#fff"
+
 props:
-  color_vermilion_darker:
-    value: "hsla({!vermilion}, 33%, 1)"
-    category: color_group_1
-  color_vermilion_dark:
-    value: "hsla({!vermilion}, 43%, 1)"
-    category: color_group_1
-  color_vermilion:
-    value: "hsla({!vermilion}, 53%, 1)"
-    category: color_group_1
-  color_vermilion_light:
-    value: "hsla({!vermilion}, 63%, 1)"
-    category: color_group_1
-  color_vermilion_lighter:
-    value: "hsla({!vermilion}, 75%, 1)"
-    category: color_group_1
+  ilws-illDark:
+    value: "#0076ab"
+    label: "ILL Dark"
+    category: 1-ill
+  ilws-illMain:
+      value: "#0094d6"
+      label: "ILL Main"
+      category: 1-ill
+  ilws-illMedium:
+      value: "#5cbae5"
+      label: "ILL Medium"
+      category: 1-ill
+  ilws-illLight:
+      value: "#cceaf7"
+      label: "ILL Light"
+      category: 1-ill
 
-  color_ucla_gold_darker:
-    value: "hsla({!ucla_gold}, 35%, 1)"
-    category: color_group_2
-  color_ucla_gold_dark:
-    value: "hsla({!ucla_gold}, 45%, 1)"
-    category: color_group_2
-  color_ucla_gold:
-    value: "hsla({!ucla_gold}, 52%, 1)"
-    category: color_group_2
-  color_ucla_gold_light:
-    value: "hsla({!ucla_gold}, 65%, 1)"
-    category: color_group_2
-  color_ucla_gold_lighter:
-    value: "hsla({!ucla_gold}, 75%, 1)"
-    category: color_group_2
+  ilws-iesDark:
+      value: "#878e19"
+      label: "IES Dark"
+      category: 2-ies
+  ilws-iesMain:
+      value: "#a9b21f"
+      label: "IES Main"
+      category: 2-ies
+  ilws-iesMedium:
+      value: "#c4ca5b"
+      label: "IES Medium"
+      category: 2-ies
+  ilws-iesLight:
+      value: "#e7efc1"
+      label: "IES Light"
+      category: 2-ies
 
-  color_bleu_de_france_darker:
-    value: "hsla({!bleu_de_france}, 34%, 1)"
-    category: color_group_3
-  color_bleu_de_france_dark:
-    value: "hsla({!bleu_de_france}, 44%, 1)"
-    category: color_group_3
-  color_bleu_de_france:
-    value: "hsla({!bleu_de_france}, 54%, 1)"
-    category: color_group_3
-  color_bleu_de_france_light:
-    value: "hsla({!bleu_de_france}, 64%, 1)"
-    category: color_group_3
-  color_bleu_de_france_lighter:
-    value: "hsla({!bleu_de_france}, 74%, 1)"
-    category: color_group_3
+  ilws-imaDark:
+      value: "#c77e25"
+      label: "IMA Dark"
+      category: 3-ima
+  ilws-imaMain:
+      value: "#f99e2e"
+      label: "IMA Main"
+      category: 3-ima
+  ilws-imaMedium:
+      value: "#feb862"
+      label: "IMA Medium"
+      category: 3-ima
+  ilws-imaLight:
+      value: "#ffe8ba"
+      label: "IMA Light"
+      category: 3-ima
 
-  color_oxford_blue:
-    value: "hsla({!oxford_blue}, 15%, 1)"
-    category: color_group_4
-  color_rich_black:
-    value: "{!rich_black}"
-    category: color_group_4
+  ilws-imfDark:
+      value: "#b5151c"
+      label: "IMF Dark"
+      category: 4-imf
+  ilws-imfMain:
+      value: "#e21a23"
+      label: "IMF Main"
+      category: 4-imf
+  ilws-imfMedium:
+      value: "#fa535a"
+      label: "IMF Medium"
+      category: 4-imf
+  ilws-imfLight:
+      value: "#fdddce"
+      label: "IMF Light"
+      category: 4-imf
+
+  ilws-grayDark:
+    value: "#333333"
+    label: "Gray Dark"
+    category: 5-gray
+  ilws-grayMain:
+    value: "#666666"
+    label: "Gray Main"
+    category: 5-gray
+  ilws-grayMedium:
+    value: "#999999"
+    label: "Gray Medium"
+    category: 5-gray
+  ilws-grayLight:
+    value: "#f2f2f2"
+    label: "Gray Light"
+    category: 5-gray
+
+  ilws-brightGreen:
+    value: "#8DDC2F"
+    label: "Bright Green"
+    category: 6-extra
+
+#  color_black:
+#    value: "{!rich_black}"
+#    category: extra
   color_white:
     value: "{!white}"
-    category: color_group_4
-  color_silver:
-    value: "#7F8891"
-    category: color_group_4
-  color_cloud:
-    value: "#E9F3FD"
-    category: color_group_4
+    category: extra
+#  color_silver:
+#    value: "#7F8891"
+#    category: color_group_4
+#  color_cloud:
+#    value: "#E9F3FD"
+#    category: color_group_4
 global:
   type: color
   category: color

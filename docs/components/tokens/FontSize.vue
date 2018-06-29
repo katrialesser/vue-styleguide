@@ -52,14 +52,14 @@ export default {
   font-family: $font-family-heading;
   font-weight: $font-weight-bold;
   line-height: $line-height-heading;
-  color: $color-rich-black;
+  color: $ilws-gray-dark;
   margin-bottom: $space-small;
   font-style: normal;
   span {
     letter-spacing: -0.02em;
     margin-left: 10px;
     font-weight: $font-weight-regular;
-    color: $color-silver;
+    color: $ilws-gray-medium;
   }
 }
 </style>

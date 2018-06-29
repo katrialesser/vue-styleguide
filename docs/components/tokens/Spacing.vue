@@ -57,7 +57,7 @@ export default {
   margin-bottom: $space-x-small;
   font-size: $font-size-small;
   font-family: $font-family-text;
-  color: $color-rich-black;
+  color: $ilws-gray-dark;
   background: tint(#c4cdd5, 85%);
   text-align: center;
   position: relative;
@@ -65,7 +65,7 @@ export default {
   width: 100%;
   span {
     margin-left: 5px;
-    color: $color-silver;
+    color: $ilws-gray-medium;
   }
 }
 </style>

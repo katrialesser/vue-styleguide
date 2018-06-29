@@ -37,11 +37,11 @@ export default {
 
 <style lang="scss" scoped>
 // Design Tokens with local scope
-$color-template-background: $color-rich-black;
+$color-template-background: $ilws-gray-dark;
 $color-template-background-top: tint($color-template-background, 5%);
 $color-template-background-bottom: shade($color-template-background, 5%);
 $color-template-text: $color-white;
-$color-template-link: $color-bleu-de-france;
+$color-template-link: $ilws-ill-main;
 
 .not-found {
   @include reset;
