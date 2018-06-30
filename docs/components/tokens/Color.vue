@@ -5,13 +5,13 @@
       :key="index"
       class="color"
       :class="prop.category"
-      v-if="prop.type === 'color' && prop.category !== 'extra'">
+      v-if="prop.type === 'color'">
 
         <div class="swatch" :style="{ backgroundColor: prop.value }" />
         <h3>{{prop.label}}</h3>
         <span>HEX: {{prop.originalValue}}</span>
         <span>RGB: {{prop.value}}</span>
-        <span>Product/Category: {{prop.category.replace(/\d-/g, "")}}</span>
+        <span>Product: {{prop.category.replace(/\d-/g, "")}}</span>
         <span>SCSS: ${{prop.name.replace(/_/g, "-")}}</span>
     </div>
   </div>
@@ -22,10 +22,13 @@ import designTokens from "@/assets/tokens/tokens.raw.json"
 import orderBy from "lodash/orderBy"
 
 /**
- * The color palette comes with 5 different weights for each hue. These hues
- * should be used purposefully to communicate how things function in the
- * interface. Keep in mind that `vermilion` is only used in special cases
- * like destructive actions and error messages. To edit the colors, see
+ * The color palette comes with 4 main colors for each product, as well as 4 general gray tones.
+ * Several additional "extra" colors may be used on occasion outside of the product-specific and gray colors.
+ * All color variables names are in the format of prefix `ilws-` and the
+ * product abbreviation (`ill`, `ies`, `ima`, `imf`, or `gray`),
+ * followed by the descriptor, like `Dark`, `Main`, `Medium`, or `Light`.
+ * Extra colors will be few and named appropriately with the `ilws` prefix.
+ * To edit the colors, see
  * [/src/tokens/color.yml](https://github.com/viljamis/vue-design-system/blob/master/src/tokens/color.yml).
  */
  /* the name below is the page title - cant change without breaking */
@@ -34,11 +37,8 @@ export default {
   methods: {
     orderData: function(data) {
       // let byValue = orderBy(data, "value", "asc")
-      let byName = orderBy(data, "name", "asc")
-      let byCategoryAndName = orderBy(byName, "category")
-
-      let byCategory = orderBy(data, "category", "asc")
-      let byCategoryAndHex = orderBy(byCategory, "originalValue")
+      // let byName = orderBy(data, "name", "asc")
+      // let byCategoryAndName = orderBy(byName, "category")
 
       let byHex = orderBy(data, "originalValue", "asc")
       let byHexAndCategory = orderBy(byHex, "category")
@@ -65,7 +65,7 @@ export default {
   align-content: stretch;
   justify-content: left;
   grid-template-columns:
-    calc(20% - #{$space-base}) calc(20% - #{$space-base}) calc(20% - #{$space-base}) calc(20% - #{$space-base})
+    calc(20% - #{$space-base}) calc(20% - #{$space-base}) calc(20% - #{$space-base})
     calc(20% - #{$space-base});
   grid-column-gap: $space-base;
   max-width: 1200px;

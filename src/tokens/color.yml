@@ -152,9 +152,14 @@ props:
 #  color_black:
 #    value: "{!rich_black}"
 #    category: extra
+#  color_black:
+#    value: "#000000"
+#    label: "White"
+#    category: 6-extra
   color_white:
-    value: "{!white}"
-    category: extra
+    value: "#ffffff"
+    label: "White"
+    category: 6-extra
 #  color_silver:
 #    value: "#7F8891"
 #    category: color_group_4
