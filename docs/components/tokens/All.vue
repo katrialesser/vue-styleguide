@@ -3,9 +3,9 @@
     <table>
       <thead>
         <tr>
-          <th>Token Name</th>
-          <th>Value</th>
-          <th>Category</th>
+          <th>Variable Name</th>
+          <th>Color Value</th>
+          <th>Product or Type</th>
         </tr>
       </thead>
       <tbody>
@@ -17,15 +17,15 @@
           </td>
           <td v-else>N/A</td>
           <td v-if="token.value">
-            <div v-if="token.type === 'color'" class="example color" :style="{ backgroundColor: token.value }" />
+            <div v-if="token.type === 'color'" class="example color" :style="{ backgroundColor: token.originalValue }" />
             <div v-if="token.category === 'border-radius'" class="example border-radius" :style="{ borderRadius: token.value }" />
             <div v-if="token.category === 'box-shadow'" class="example box-shadow" :style="{ boxShadow: token.value }" />
             <code class="type">
-              {{token.value}}
+              {{token.originalValue}}
             </code>
           </td>
           <td v-else>N/A</td>
-          <td v-if="token.category">{{token.category}}</td>
+          <td v-if="token.category">{{token.category.replace(/\d-/g, "")}}</td>
           <td v-else>N/A</td>
         </tr>
       </tbody>
@@ -38,18 +38,24 @@ import designTokens from "@/assets/tokens/tokens.raw.json"
 import orderBy from "lodash/orderBy"
 
 /**
- * A list of available tokens in Vue Design System. Use these tokens in place
- * of hard-coded values in order to maintain a scalable and consistent system.
+ * A list of color variables for Imagine Learning Web Styles. Use these color variables in place
+ * of hard-coded color values in order to maintain a scalable and consistent system.
  * To edit these tokens and add more, see
- * [/src/tokens/](https://github.com/viljamis/vue-design-system/blob/master/src/tokens).
+ * [/src/tokens/](https://github.com/katrialesser/vue-design-system/blob/master/src/tokens).
  */
 export default {
   name: "All",
   methods: {
     orderData: function(data) {
-      let byName = orderBy(data, "name", "asc")
-      let byCategoryAndName = orderBy(byName, "category")
-      return byCategoryAndName
+     //  let byName = orderBy(data, "name", "asc")
+     //  let byCategoryAndName = orderBy(byName, "category")
+     //  return byCategoryAndName
+
+        let byHex = orderBy(data, "originalValue", "asc")
+        let byHexAndCategory = orderBy(byHex, "category")
+
+        return byHexAndCategory
+
     },
   },
   data() {
