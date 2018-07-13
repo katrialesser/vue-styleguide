@@ -92,6 +92,11 @@ module.exports = {
       content: "../docs/faq.md",
       components: "../docs/utils/section.vue",
     },
+    // {
+    //   name: "Test",
+    //   content: "../docs/test.md",
+    //   components: "../docs/utils/section.vue",
+    // },
     {
       /**
        * Private components have to be loaded into the documentation as well,
